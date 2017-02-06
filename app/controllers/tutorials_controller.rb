@@ -1,7 +1,9 @@
 class TutorialsController < ApplicationController
 
   before_action :find_params, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :authenticate_admin, only: [:new, :edit]
+  #before_filter :authenticate_admin!
+
 
   def index
     @tutorials = Tutorial.all
