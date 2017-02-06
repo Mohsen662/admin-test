@@ -1,0 +1,14 @@
+<% @tutorials.each do |tutorial| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="article-title">
+          <%= link_to tutorial.title, tutorial_path(tutorial) %>
+        </div>
+        <div class="article-body">
+          <%= truncate(tutorial.content, length: 100) %>          
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
