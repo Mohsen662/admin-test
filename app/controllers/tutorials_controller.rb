@@ -5,12 +5,9 @@ class TutorialsController < ApplicationController
   end
 
   def create
-
     @tutorial = Tutorial.new(tutorial_params)
-
     if @tutorial.save
-      flash[:notice] = "Article was successfully created"
-      redirect_to tutorial_path(@tutorial)
+      redirect_to @tutorial
     else
       render 'new'
     end
@@ -22,8 +19,8 @@ class TutorialsController < ApplicationController
 
   private
 
-  def tutorial_params
-    params.permit(:title, :content)
-  end
+    def tutorial_params
+      params.require(:tutorial).permit(:title, :content)
+    end
 
 end

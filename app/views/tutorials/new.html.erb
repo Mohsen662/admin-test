@@ -1,18 +1,18 @@
-<h1>New Tutorial</h1>
-<div class="form-group">
-  <%= form_for @tutorial do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
-  <% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-1">
+    <h1>New Tutorial</h1>
+    <%= form_for @tutorial do |f| %>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :content %>
+        <%= f.text_area :content , class: "form-control" %>
+      </div>
+      <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+    <% end %>
+  </div>
 </div>
-<div class="form-group">
-  <%= form_for @tutorial do |f| %>
-    <%= f.label :content %>
-    <%= f.text_area :content, class: "form-control" %>
-  <% end %>
-</div>
-<div class="form-group">
-  <%= form_for @tutorial do |f| %>
-    <%= f.submit :submit, class: "btn btn-primary btn-lg" %>
-  <% end %>
-</div>
+
