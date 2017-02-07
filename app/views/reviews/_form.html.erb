@@ -1,0 +1,6 @@
+<%= form_for ([@tutorial, @tutorial.reviews.build]) do |f| %>
+  <div class="rating-form">
+    <%= f.text_area :comment %>
+  </div>
+  <%= f.submit :submit, class: "btn-custom2" %>
+<% end %>

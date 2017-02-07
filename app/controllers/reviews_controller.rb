@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.requier(:review).permit(:comment)
+    params.require(:review).permit(:comment)
   end
 
   def find_tutorial
