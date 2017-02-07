@@ -2,7 +2,7 @@
   <div class="edit-review-form">
     <h1>Edit Review</h1>
     <%= form_for ([@tutorial, @review]) do |f| %>
-      <div class="rating-form">
+      <div class="comment-form">
         <%= f.text_area :comment %>
       </div>
       <%= f.submit :submit, class: "btn-custom2" %>

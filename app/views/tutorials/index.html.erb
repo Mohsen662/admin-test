@@ -1,12 +1,17 @@
 <h1 class="current-category"><%= params[:category] %></h1>
+
 <% if @tutorials.count == 0 %>
   <h3>There are no tutorials in this category</h3>
 <% else %> 
   <div class="row">
     <% @tutorials.each do |tutorial| %>
-      <div class="col-md-3">
-        <a href="/tutorials/<%= tutorial.id %>">
+      <div class="col-xs-6 col-md-3">
+        <a href="/tutorials/<%= tutorial.id %>", class="thumbnail">
           <%= image_tag tutorial.tutorial_img.url(:tutorial_index), class: "tutorial" %>
+        <div class="caption">
+          <h3><%= truncate(tutorial.content, length: 100) %></h3>
+          <%= link_to 'Read more', tutorial_path(tutorial), class: "btn btn-default"%>
+        </div>
         </a>
       </div>
     <% end %>

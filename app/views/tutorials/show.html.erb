@@ -5,7 +5,7 @@
   <div class="col-md-8">
     <div class="tutorial-info">
       <h2 class="tutprial-title"><%= @tutorial.title %></h2>
-      <h2 class="tutorial-category"><em>category:</em> <%= @tutorial.category.name %></h2>
+      <span class="tutorial-category">category: <em><%= @tutorial.category.name %></em></span><hr>
       <p class="tutorial-decs"><%= @tutorial.content %></p>
     </div>
 
@@ -21,8 +21,8 @@
         <div class="reviews">
           <h1>Reviews </h1>
           <%= render @tutorial.reviews %>
-          <div>
-            <%= link_to "Add Reviews", new_tutorial_review_path(@tutorial), lcass: "btn-custom" %>
+          <div align="center">
+            <%= link_to "Add Reviews", new_tutorial_review_path(@tutorial), class: "btn-custom" %>
           </div>
         </div>
       </div>
