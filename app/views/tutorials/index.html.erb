@@ -2,18 +2,13 @@
 <% if @tutorials.count == 0 %>
   <h3>There are no tutorials in this category</h3>
 <% else %> 
-  <% @tutorials.each do |tutorial| %>
-    <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
-        <div class="well well-lg">
-          <div class="tutorial-title">
-            <%= link_to tutorial.title, tutorial_path(tutorial) %>
-          </div>
-          <div class="article-body">
-            <%= truncate(tutorial.content, length: 100) %>          
-          </div>
-        </div>
+  <div class="row">
+    <% @tutorials.each do |tutorial| %>
+      <div class="col-md-3">
+        <a href="/tutorials/<%= tutorial.id %>">
+          <%= image_tag tutorial.tutorial_img.url(:tutorial_index), class: "tutorial" %>
+        </a>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>

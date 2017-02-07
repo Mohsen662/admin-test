@@ -1,11 +1,11 @@
 <h1>This is show page</h1>
 <div class="row">
   <div class="col-md-6 col-lg-offset-1">
-    <h1>Your Tutorial: </h1>
-    <h2>Title: <%= @tutorial.title %> </h2>    
-    <h2>Content: </h2>
+    <h2>Your Tutorial: </h2>
+    <h3>Title: <%= @tutorial.title %> </h3> 
+    <h4><em>category: </em><%= @tutorial.category.name %></h4>   
+    <h4>Content: </h4>
     <%= @tutorial.content %> <br>
-
     <% if logged_in? && current_user.admin? %>
 
       <%= link_to 'Edit this tutorial', edit_tutorial_path(@tutorial), class: 'btn btn-xs btn-primary' %>
