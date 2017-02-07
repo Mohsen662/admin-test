@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206124043) do
+ActiveRecord::Schema.define(version: 20170207060446) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -38,10 +38,14 @@ ActiveRecord::Schema.define(version: 20170206124043) do
   create_table "tutorials", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.integer  "category_id"
     t.integer  "user_id"
+    t.string   "tutorial_img_file_name"
+    t.string   "tutorial_img_content_type"
+    t.integer  "tutorial_img_file_size"
+    t.datetime "tutorial_img_updated_at"
   end
 
   create_table "users", force: :cascade do |t|

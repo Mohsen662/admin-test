@@ -11,12 +11,13 @@ class TutorialsController < ApplicationController
 
   def new
     @tutorial = Tutorial.new
+    @categories = Category.all.map{ |c| [c.name, c.id] }
   end
 
   def create
     @tutorial = current_user.tutorials.build(tutorial_params)
-    @tutorial = Tutorial.new(tutorial_params)
     @tutorial.category_id = params[:category_id]
+
     if @tutorial.save
       redirect_to @tutorial
     else
@@ -52,7 +53,7 @@ class TutorialsController < ApplicationController
   private
 
     def tutorial_params
-      params.require(:tutorial).permit(:title, :content, :category_id)
+      params.require(:tutorial).permit(:title, :content, :category_id, :tutorial_img)
     end
 
     def find_params
