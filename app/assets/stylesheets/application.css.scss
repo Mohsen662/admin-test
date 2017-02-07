@@ -38,11 +38,17 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
   font-weight: 200;
   text-transform: uppercase;
 }
+
+.show-caption {
+  font-family: 'Lato', sans-serif;
+  font-weight: 50;
+}
+
 
 p.alert, p.notice {
   margin: 0;
@@ -152,8 +158,8 @@ p.alert, p.notice {
 .tutorial {
   height: 350px;
   width: 250px;
-  margin-bottom: 40px;
-  @include background-tile;
+  margin-bottom: 2px;
+  /*@include background-tile;*/
 }
 
 .tutorial-show {
@@ -305,6 +311,7 @@ p.alert, p.notice {
 
 }
 
+/*
 .tutorial {
    height: 320px;
    width: 180px;
@@ -314,3 +321,4 @@ p.alert, p.notice {
    height: 475px;
    width: 280px;
  }
+ */

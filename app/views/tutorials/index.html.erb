@@ -3,16 +3,25 @@
 <% if @tutorials.count == 0 %>
   <h3>There are no tutorials in this category</h3>
 <% else %> 
+  
+  <!-- CAROUSEL -->
+
+  
+
+  <!-- CONTENT -->
   <div class="row">
     <% @tutorials.each do |tutorial| %>
-      <div class="col-xs-6 col-md-3">
-        <a href="/tutorials/<%= tutorial.id %>", class="thumbnail">
-          <%= image_tag tutorial.tutorial_img.url(:tutorial_index), class: "tutorial" %>
-        <div class="caption">
-          <h3><%= truncate(tutorial.content, length: 100) %></h3>
-          <%= link_to 'Read more', tutorial_path(tutorial), class: "btn btn-default"%>
+      <div class="col-md-6">
+        <div class="thumbnail">
+          <%= image_tag tutorial.tutorial_img.url(:tutorial_index), class: "img-thumbnail tutorial" %>
+          <div class="caption">
+            <!--<a href="/tutorials/<%= tutorial.id %>" >-->
+            <h3 class="show-caption"><%= truncate(tutorial.content, length: 120) %></h3>
+            <div align="center">
+              <%= link_to 'READ MORE', tutorial_path(tutorial), class: "btn btn-info" %>
+            </div>            
+          </div>
         </div>
-        </a>
       </div>
     <% end %>
   </div>
