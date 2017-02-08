@@ -53,7 +53,7 @@ class TutorialsController < ApplicationController
   private
 
     def tutorial_params
-      params.require(:tutorial).permit(:title, :content, :category_id, :tutorial_img)
+      params.require(:tutorial).permit(:title, :content, :category_id, :tutorial_img, :episode_id)
     end
 
     def find_params

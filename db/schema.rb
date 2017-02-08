@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207070530) do
+ActiveRecord::Schema.define(version: 20170208075115) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20170207070530) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "episodes", force: :cascade do |t|
+    t.string   "youtube_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "aparat_id"
+    t.string   "aparat_embed"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
     t.datetime "created_at",  null: false
@@ -54,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170207070530) do
     t.string   "tutorial_img_content_type"
     t.integer  "tutorial_img_file_size"
     t.datetime "tutorial_img_updated_at"
+    t.integer  "episode_id"
   end
 
   create_table "users", force: :cascade do |t|

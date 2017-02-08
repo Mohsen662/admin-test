@@ -1,35 +1,47 @@
-<div class="row">
-  <div class="col-md-4">
-    <%= image_tag @tutorial.tutorial_img.url(:tutorial_show), class: "tutorial-show" %>
+
+<!-- ######################################################################### -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <div id=<%= @tutorial.episode.aparat_id %>><script type="text/JavaScript" src="https://www.aparat.com/embed/<%= @tutorial.episode.aparat_embed %>&data[responsive]=yes"></script></div>
+    </div>
   </div>
-  <div class="col-md-8">
-    <div class="tutorial-info">
-      <h2 class="tutprial-title"><%= @tutorial.title %></h2>
-      <span class="tutorial-category">category: <em><%= @tutorial.category.name %></em></span><hr>
-      <p class="tutorial-decs"><%= @tutorial.content %></p>
-    </div>
+</div>
+<hr>
+<!-- DOWNLOAD BUTTON ADDING -->
 
-    <div class="links btn-group">
-      <% if logged_in? && current_user.admin? %>
-        <%= link_to 'Edit this tutorial', edit_tutorial_path(@tutorial), class: 'btn btn-xs btn-primary' %>
-        <%= link_to 'Delete this tutorial', tutorial_path(@tutorial), method: :delete, data: { confirm: "Are you sure you want to delete this tutorial?" }, class: 'btn btn-xs btn-danger' %>
-      <% end %>
-    </div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="reviews">
-          <h1>Reviews </h1>
-          <%= render @tutorial.reviews %>
-          <div align="center">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="tutorial-info">
+        <h2 class="tutorial-title"><%= @tutorial.title %></h2>
+        <span class="tutorial-category">category: <em><%= @tutorial.category.name %></em></span><hr>
+        <p class="tutorial-decs"><%= @tutorial.content %></p>
+        <div class="links btn-group">
+          <div class="container">
+            <% if logged_in? && current_user.admin? %>
+
+              <%= link_to 'Edit this tutorial', edit_tutorial_path(@tutorial), class: 'btn btn-xs btn-primary' %>
+              <%= link_to 'Delete this tutorial', tutorial_path(@tutorial), method: :delete, data: { confirm: "Are you sure you want to delete this tutorial?" }, class: 'btn btn-xs btn-danger' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <hr>
+      <div class="row">
+        <div class="col-md-10">
+          <div class="reviews">
+            <h1>Reviews </h1>
+            <%= render @tutorial.reviews %>            
             <%= link_to "Add Reviews", new_tutorial_review_path(@tutorial), class: "btn-custom" %>
-            <hr>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 
