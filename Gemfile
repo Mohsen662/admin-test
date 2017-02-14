@@ -22,6 +22,7 @@ gem 'rb-readline'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.2'
 gem 'paperclip', '~> 5.1'
+gem "font-awesome-rails"
 
 
 group :development, :test do
