@@ -19,6 +19,7 @@ class TutorialsController < ApplicationController
     @tutorial.category_id = params[:category_id]
 
     if @tutorial.save
+      flash[:succes] = "Tutorial was successfully created"
       redirect_to @tutorial
     else
       render 'new'
@@ -45,6 +46,7 @@ class TutorialsController < ApplicationController
   def destroy
     if @tutorial.destroy
       redirect_to tutorials_path
+      flash[:danger] = "Tutorial was successfuly deleted"
     else
       render 'show'
     end

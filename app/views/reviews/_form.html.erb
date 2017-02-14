@@ -1,3 +1,5 @@
+<%= render 'shared/errors', obj: @tutorial %>
+
 <%= form_for ([@tutorial, @tutorial.reviews.build]) do |f| %>
   <div class="comment-form">
     <%= f.text_area :comment %>

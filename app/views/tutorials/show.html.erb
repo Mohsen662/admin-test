@@ -1,59 +1,59 @@
+<%= render 'shared/errors', obj: @tutorial %>
 
-<!-- ######################################################################### -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-      <div id=<%= @tutorial.episode.aparat_id %>><script type="text/JavaScript" src="https://www.aparat.com/embed/<%= @tutorial.episode.aparat_embed %>&data[responsive]=yes"></script></div>
+<section id="show-tutorial">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" align="center">
+        <div id=<%= @tutorial.episode.aparat_id %>><script type="text/JavaScript" src="https://www.aparat.com/embed/<%= @tutorial.episode.aparat_embed %>&data[responsive]=yes"></script></div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- DOWNLOAD BUTTON ADDING -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-      <div class="well text-left">
+  <!-- DOWNLOAD BUTTON ADDING -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10" align="center">
+        
         <% if logged_in? %>
-          <%= link_to 'Download project', root_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to 'Download project', root_path, class: "btn-info" %>
         <% else %>
-          <h4>You need to be a user to download this project.</h4>
-          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-info btn-lg' %>
+          <h4>You need to be a user to download this project.<%= link_to 'Sign Up', new_user_registration_path, class: 'btn-info' %></h4>
         <% end %>
       </div>
     </div>
   </div>
-</div>
-<hr>
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-      <div class="tutorial-info">
-        <h2 class="tutorial-title"><%= @tutorial.title %></h2>
-        <span class="tutorial-category">category: <em><%= @tutorial.category.name %></em></span><hr>
-        <p class="tutorial-decs"><%= @tutorial.content %></p>
-        <div class="links btn-group">
-          <div class="container">
-            <% if logged_in? && current_user.admin? %>
-
-              <%= link_to 'Edit this tutorial', edit_tutorial_path(@tutorial), class: 'btn btn-xs btn-primary' %>
-              <%= link_to 'Delete this tutorial', tutorial_path(@tutorial), method: :delete, data: { confirm: "Are you sure you want to delete this tutorial?" }, class: 'btn btn-xs btn-danger' %>
-            <% end %>
-          </div>
-        </div>
-      </div>
   <hr>
-      <div class="row">
-        <div class="col-md-10">
-          <div class="reviews">
-            <h1>Reviews </h1>
-            <%= render @tutorial.reviews %>            
-            <%= link_to "Add Reviews", new_tutorial_review_path(@tutorial), class: "btn-custom" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="tutorial-info">
+          <h2 class="tutorial-title"><%= @tutorial.title %></h2>
+          <span class="tutorial-category">category: <em><%= @tutorial.category.name %></em></span><hr>
+          <p class="tutorial-decs"><%= @tutorial.content %></p>
+          <div class="links btn-group">
+            <div class="container">
+              <% if logged_in? && current_user.admin? %>
+                <%= link_to 'Edit this tutorial', edit_tutorial_path(@tutorial), class: 'btn btn-xs btn-primary' %>
+                <%= link_to 'Delete this tutorial', tutorial_path(@tutorial), method: :delete, data: { confirm: "Are you sure you want to delete this tutorial?" }, class: 'btn btn-xs btn-danger' %>
+              <% end %>
+            </div>
           </div>
         </div>
+        <hr>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
 
 
