@@ -34,7 +34,7 @@
 .navbar-nav {
   font-family: 'Lato', sans-serif;
   font-size: 1.2em;
-  margin: 25px 100px 0;
+  margin: 20px 100px 0;
 }
 
 .navbar-default .navbar-nav .link {
@@ -316,7 +316,7 @@
 
 /*SHOW TUTORIAL*/
 #show-tutorial {
-  padding: 50px 0;
+  padding: 100px 0;
   background-color: #f7f7f7;
 }
 
@@ -375,6 +375,34 @@
   padding: 20px 0;
 }
 
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
 
 
 

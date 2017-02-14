@@ -9,23 +9,12 @@
   </head>
 
   <body>
-    <!-- NAVBAR STARTS -->
 
     <%= render 'layouts/navigation' %>
+    <!--<%= render 'layouts/messages' %> -->
     
-    <!-- <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>">
-          <% value %>
-        </div>
-      <% end %>
-    </div> -->
-
-    <%= yield :top_content %>
-    <%= yield :header %></h1>
-    <%= render 'layouts/messages' %>
     <%= yield %>
-    
+    <%= debug(params) if Rails.env.development? %>
     <!-- FOOTER -->
     <%= render 'layouts/footer' %>
 
