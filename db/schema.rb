@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170214085925) do
+ActiveRecord::Schema.define(version: 20170215085118) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -37,10 +37,10 @@ ActiveRecord::Schema.define(version: 20170214085925) do
 
   create_table "episodes", force: :cascade do |t|
     t.string   "youtube_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "aparat_id"
-    t.string   "aparat_embed"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "aparat_id",    default: ""
+    t.string   "aparat_embed", default: ""
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -54,15 +54,15 @@ ActiveRecord::Schema.define(version: 20170214085925) do
   create_table "tutorials", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.integer  "category_id"
     t.integer  "user_id"
     t.string   "tutorial_img_file_name"
     t.string   "tutorial_img_content_type"
     t.integer  "tutorial_img_file_size"
     t.datetime "tutorial_img_updated_at"
-    t.integer  "episode_id"
+    t.integer  "episode_id",                default: 1
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,23 +1,27 @@
 <%= render 'shared/errors', obj: @tutorial %>
 
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
-    <div class="new-tutorial-form">
-      <%= form_for @tutorial, html: {multipart: true} do |f| %>
-        <%= f.select :category_id, @categories %>
-        <%= f.file_field :tutorial_img %>
+<section id="new-tutorial">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for @tutorial, html: {multipart: true} do |f| %>
+          <%= f.select :category_id, @categories %>
+          <%= f.file_field :tutorial_img %>
 
-        <div class="form-group">
-          <%= f.label :title %>
-          <%= f.text_field :title, class: "form-control" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.label :content %>
-          <%= f.text_area :content , class: "form-control" %>
-        </div>
-        <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
-      <% end %>
+          <div class="form-group">
+            <%= f.label :content %>
+            <%= f.text_area :content , class: "form-control form-input" %>
+          </div>
+          <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+          <%= link_to 'Cancel', tutorial_path(@tutorial), class: "btn-link" %>
+        <% end %>
+
+      </div>
     </div>
   </div>
-</div>
+</section>

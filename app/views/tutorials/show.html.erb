@@ -29,7 +29,7 @@
         <div class="tutorial-info">
           <h2 class="tutorial-title"><%= @tutorial.title %></h2>
           <span class="tutorial-category">category: <em><%= @tutorial.category.name %></em></span><hr>
-          <p class="tutorial-decs"><%= @tutorial.content %></p>
+          <p class="tutorial-decs"><%= simple_format(@tutorial.content) %></p>
           <div class="links btn-group">
             <div class="container">
               <% if logged_in? && current_user.admin? %>

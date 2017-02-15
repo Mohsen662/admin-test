@@ -1,21 +1,25 @@
 <%= render 'shared/errors', obj: @tutorial %>
-<div class="row">
-  <div class="col-md-6 col-md-offset-1">
-    <%= form_for @tutorial do |f| %>
-      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
+<section id="new-tutorial">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for @tutorial do |f| %>
+          <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
+          <br>
+          <%= f.file_field :tutorial_img %>
 
-      <%= f.file_field :tutorial_img %>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :title %>
-        <%= f.text_field :title, class: "form-control" %>
+          <div class="form-group">
+            <%= f.label :content %>
+            <%= f.text_area :content , class: "form-control form-input" %>
+          </div>
+          <%= f.submit :submit, class: 'btn btn-primary btn-lg' %>
+        <% end %>
       </div>
-
-      <div class="form-group">
-        <%= f.label :content %>
-        <%= f.text_area :content , class: "form-control" %>
-      </div>
-      <%= f.submit :submit, class: 'btn btn-primary btn-lg' %>
-    <% end %>
+    </div>
   </div>
-</div>
+</section>
