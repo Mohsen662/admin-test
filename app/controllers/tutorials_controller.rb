@@ -19,7 +19,6 @@ class TutorialsController < ApplicationController
     @tutorial.category_id = params[:category_id]
 
     if @tutorial.save
-      flash[:succes] = "Tutorial was successfully created"
       redirect_to @tutorial
     else
       render 'new'
@@ -36,7 +35,6 @@ class TutorialsController < ApplicationController
   def update
     @tutorial.category_id = params[:category_id]
     if @tutorial.update(tutorial_params)
-      flash[:success] = "Tutorial was succssfuly updated"
       redirect_to @tutorial
     else
       render 'edit'
@@ -46,7 +44,6 @@ class TutorialsController < ApplicationController
   def destroy
     if @tutorial.destroy
       redirect_to tutorials_path
-      flash[:danger] = "Tutorial was successfuly deleted"
     else
       render 'show'
     end
